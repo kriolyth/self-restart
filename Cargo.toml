@@ -1,0 +1,21 @@
+[package]
+name = "self-restart"
+version = "0.1.0"
+authors = ["Krio Lyth <kriolyth@gmail.com>"]
+edition = "2018"
+license = "Apache-2.0"
+
+[[bin]]
+name = "self-restart"
+path = "src/main.rs"
+
+[[bin]]
+name = "self-restart-updated"
+path = "src/updated.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "fs", "sync", "process", "signal", "macros", "time"] }
+self_update = { version = "0.27", features = [], default-features = false }
+crossterm = { version = "0.21" }
